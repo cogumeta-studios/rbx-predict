@@ -1,0 +1,16 @@
+{
+  "name": "predict Test-Runner",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "predict": {
+        "$path": "lib"
+      }
+    },
+    "ServerScriptService": {
+      "Tests": {
+        "$path": "tests"
+      }
+    }
+  }
+}

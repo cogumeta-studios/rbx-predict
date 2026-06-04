@@ -1,0 +1,15 @@
+[package]
+name = "cogumeta/predict"
+version = "1.0.0"
+exclude = [ "**" ]
+include = [
+  "src/**/*",
+  "lib/**/*",
+  "default.project.json",
+  "vaulty.toml"
+]
+
+[dependencies]
+
+Prism = "cogumeta-studios/rbx-prism@*"
+AcidSignal = "thecogumeta/rbx-acidsignal@*"

@@ -1,0 +1,10 @@
+{
+  "name": "predict",
+  "tree": {
+    "$path": "lib",
+    "Packages": {
+      "$path": "Packages"
+    }
+  }
+}
+
