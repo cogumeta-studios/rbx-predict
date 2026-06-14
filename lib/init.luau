@@ -14,6 +14,7 @@ export type Context = {
 	Data: any,
 	Elapsed: number,
 	StartTime: number,
+	Swait: (number, number) -> number,
 }
 local Handlers: { [string]: { callback: (context: Context) -> (), event: typeof(Signal.new()) } } = {}
 
@@ -47,6 +48,10 @@ function Predict.GetSignal(name: string)
 	return handler.event
 end
 
+local function swait(time: number, s: number): number
+	return task.wait(time - s) - time + s
+end
+
 local function LocalHandle(name: string, data: any?, startTime: number, ignoreElapsed: boolean)
 	local handler = Handlers[name]
 
@@ -69,6 +74,7 @@ local function LocalHandle(name: string, data: any?, startTime: number, ignoreEl
 		Data = data,
 		StartTime = startTime,
 		Elapsed = ignoreElapsed and 0 or now - startTime,
+		Swait = swait,
 	}
 
 	handler.callback(context)
